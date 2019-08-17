@@ -9,6 +9,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.widget.Toast;
 
+import java.util.Date;
 import java.util.Random;
 
 import static java.lang.Math.toIntExact;
@@ -48,40 +49,50 @@ public class NotificationService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent workIntent) {
-        for (int i = 0; i < 1 * 60; i++) {
+
+        long startTime = new Date().getTime();
+
+
+        for (long nowSec = 0; nowSec < 10;) {
+            long nowMili = new Date().getTime() - startTime;
+            nowSec = nowMili / 1000;
+
             try {
-                int sleepTime = getRandom(10, 21) * 100;
-                System.out.println(sleepTime);
-                Thread.sleep(sleepTime);
+                System.out.println("Now " + nowMili + " " + nowSec);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            showNotification(i);
-//            (new Handler()).postDelayed(this::showNotification, i * 1000);
+
+            handleSecond(nowSec);
+//            (new Handler()).postDelayed(this::showTextNotification, i * 1000);
         }
     }
 
+    private void handleSecond(long nowSec) {
+       showTextNotification(toIntExact(nowSec),"" + nowSec);
+    }
 
-    private void showNotification(int i) {
-        long messageId = i;
-        System.out.println("dupa " + messageId);
+
+    private void showTextNotification(int nowSec, String message) {
+
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId)
                 .setSmallIcon(R.drawable.rind)
 //                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.tinder_logo))
                 .setContentTitle("Tinder")
                 .setColor(Color.RED)
-                .setContentText(getContent(i))
+                .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
-                .setGroup(messageId + "")
+                .setGroup(message)
                 .setAutoCancel(true)
-                .setCategory(getCategory(i));
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
-        notificationManager.notify(toIntExact(messageId), mBuilder.build());
-        if (i >= 50) {
-            notificationManager.cancel(i - 50);
-        }
+        notificationManager.notify(nowSec, mBuilder.build());
+//        if (i >= 50) {
+//            notificationManager.cancel(i - 50);
+//        }
     }
 
     private String getCategory(int i) {
