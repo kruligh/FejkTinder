@@ -1,10 +1,10 @@
 package com.example.kruligh.fejktinder;
 
 import android.app.IntentService;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.os.Handler;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.widget.Toast;
@@ -17,6 +17,9 @@ public class NotificationService extends IntentService {
 
     Random rand = new Random(System.currentTimeMillis());
 
+    String channelName = "asd123";
+    String channelId = "channel-id-tinder";
+
     public NotificationService() {
         super("sfsadfasdhuj");
     }
@@ -24,6 +27,22 @@ public class NotificationService extends IntentService {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "service starting", Toast.LENGTH_SHORT).show();
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+            CharSequence name = channelName;
+            String description = "Channel description";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = null;
+            channel = new NotificationChannel(channelId, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -46,7 +65,7 @@ public class NotificationService extends IntentService {
     private void showNotification(int i) {
         long messageId = i;
         System.out.println("dupa " + messageId);
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, "asd102")
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId)
                 .setSmallIcon(R.drawable.rind)
 //                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.tinder_logo))
                 .setContentTitle("Tinder")
