@@ -57,11 +57,11 @@ public class NotificationService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent workIntent) {
-//        try {
-//            Thread.sleep(5 * 1000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(5 * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
         long startTime = new Date().getTime();
