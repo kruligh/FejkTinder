@@ -15,8 +15,28 @@ public class Content {
 
     private Map<String, String> lyrics;
 
+    public Map<String, ImageNotification> getImages() {
+        return images;
+    }
+
+    public void setImages(Map<String, ImageNotification> images) {
+        this.images = images;
+    }
+
+    private Map<String, ImageNotification> images;
+
     public Content() {
         this.lyrics = new HashMap<>();
+        this.images = new HashMap<>();
+
+
+        this.firstVerse();
+
+        this.images.put("65", new ImageNotification("Gif na dziś", R.drawable.dj2));
+
+    }
+
+    private void firstVerse() {
         this.lyrics.put("1", "yoo \uD83D\uDC4A");
         this.lyrics.put("3", "to ja \uD83D\uDC30");
         this.lyrics.put("4", "ballada o białych paznokciach \uD83D\uDC85");
@@ -60,8 +80,33 @@ public class Content {
         this.lyrics.put("62", "❓Możesz malować dla mnie paznokcie na biało❓");
 
         this.lyrics.put("64", "Bo mi się podobają");
-
     }
 
 
+}
+
+class ImageNotification {
+    private String msg;
+    private int image;
+
+    public ImageNotification(String msg, int image) {
+        this.msg = msg;
+        this.image = image;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
 }

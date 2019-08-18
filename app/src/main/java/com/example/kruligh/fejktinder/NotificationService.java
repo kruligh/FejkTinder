@@ -25,7 +25,7 @@ public class NotificationService extends IntentService {
     String channelName = "asd123";
     String channelId = "channel-id-tinder";
     Content content = new Content();
-    int delay = 50 * 1000;
+    int delay = 0 * 1000;
 
     private MediaPlayer audioPlayer = null;
 
@@ -87,6 +87,7 @@ public class NotificationService extends IntentService {
 
     private void handleSecond(long nowSec) {
        showTextNotification(toIntExact(nowSec), content.getLyrics().get("" + nowSec));
+       showImageNotification(toIntExact(nowSec), content.getImages().get("" + nowSec));
     }
 
     private void showTextNotification(int nowSec, String message) {
@@ -112,5 +113,26 @@ public class NotificationService extends IntentService {
         if (nowSec  > 50) {
             notificationManager.cancel(nowSec - 50);
         }
+    }
+
+    private void showImageNotification(int nowSec, ImageNotification message) {
+        if(message == null) {
+            return;
+        }
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId)
+                .setSmallIcon(R.drawable.mes2, 0)
+                .setContentTitle(message.getMsg())
+                .setStyle(new NotificationCompat.BigPictureStyle()
+                        .bigPicture(BitmapFactory.decodeResource(this.getResources(), message.getImage()))
+                        .bigLargeIcon(null))
+//                .setContentText(message.getMsg())
+                .setPriority(NotificationCompat.PRIORITY_MAX)
+                .setGroup(message.getMsg())
+                .setAutoCancel(true)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+        notificationManager.notify(nowSec, mBuilder.build());
     }
 }
