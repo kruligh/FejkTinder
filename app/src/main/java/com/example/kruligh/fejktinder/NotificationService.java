@@ -4,7 +4,9 @@ import android.app.IntentService;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.widget.Toast;
@@ -20,6 +22,8 @@ public class NotificationService extends IntentService {
 
     String channelName = "asd123";
     String channelId = "channel-id-tinder";
+
+    private MediaPlayer audioPlayer = null;
 
     public NotificationService() {
         super("sfsadfasdhuj");
@@ -47,13 +51,18 @@ public class NotificationService extends IntentService {
         return super.onStartCommand(intent, flags, startId);
     }
 
+    // Initialise audio player.
+    private void initAudioPlayer() {
+        audioPlayer = MediaPlayer.create(this, R.raw.ballada_o_bialych_paznokciach_mixdown);
+    }
+
     @Override
     protected void onHandleIntent(Intent workIntent) {
-
         long startTime = new Date().getTime();
+        this.initAudioPlayer();
+        this.audioPlayer.start();
 
-
-        for (long nowSec = 0; nowSec < 10;) {
+        for (long nowSec = 0; nowSec < 30;) {
             long nowMili = new Date().getTime() - startTime;
             nowSec = nowMili / 1000;
 
@@ -67,6 +76,8 @@ public class NotificationService extends IntentService {
             handleSecond(nowSec);
 //            (new Handler()).postDelayed(this::showTextNotification, i * 1000);
         }
+        this.audioPlayer.stop();
+
     }
 
     private void handleSecond(long nowSec) {
@@ -77,9 +88,11 @@ public class NotificationService extends IntentService {
     private void showTextNotification(int nowSec, String message) {
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.drawable.rind)
-//                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.tinder_logo))
-                .setContentTitle("Tinder")
+                .setSmallIcon(R.drawable.mes2, 0)
+//                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.mes2))
+                .setContentTitle("Dominik Krulig Bugz")
+                //.setStyle()
+                .setColorized(true)
                 .setColor(Color.RED)
                 .setContentText(message)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
@@ -90,9 +103,9 @@ public class NotificationService extends IntentService {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
         notificationManager.notify(nowSec, mBuilder.build());
-//        if (i >= 50) {
-//            notificationManager.cancel(i - 50);
-//        }
+        if (nowSec  > 50) {
+            notificationManager.cancel(nowSec - 50);
+        }
     }
 
     private String getCategory(int i) {
