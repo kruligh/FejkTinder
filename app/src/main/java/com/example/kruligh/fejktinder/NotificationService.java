@@ -12,20 +12,15 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.widget.Toast;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 
 import static java.lang.Math.toIntExact;
 
 public class NotificationService extends IntentService {
 
-    Random rand = new Random(System.currentTimeMillis());
-
     String channelName = "asd123";
     String channelId = "channel-id-tinder";
     Content content = new Content();
-    int delay = 130 * 1000;
+    int delay = 0 * 1000;
     int endTime = 4 * 60;
 
     private MediaPlayer audioPlayer = null;
@@ -56,7 +51,6 @@ public class NotificationService extends IntentService {
         return super.onStartCommand(intent, flags, startId);
     }
 
-    // Initialise audio player.
     private void initAudioPlayer() {
         audioPlayer = MediaPlayer.create(this, R.raw.ballada_o_bialych_paznokciach_mixdown);
     }
@@ -80,7 +74,6 @@ public class NotificationService extends IntentService {
             }
 
             handleSecond(nowSec);
-//            (new Handler()).postDelayed(this::showTextNotification, i * 1000);
         }
         this.audioPlayer.stop();
 
@@ -99,7 +92,6 @@ public class NotificationService extends IntentService {
                 .setSmallIcon(R.drawable.mes2, 0)
 //                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.mes2))
                 .setContentTitle("Dominik Krulig Bugz")
-                //.setStyle()
                 .setColorized(true)
                 .setColor(Color.RED)
                 .setContentText(message)
