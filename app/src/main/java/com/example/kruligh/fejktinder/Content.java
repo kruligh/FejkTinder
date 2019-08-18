@@ -29,11 +29,49 @@ public class Content {
         this.lyrics = new HashMap<>();
         this.images = new HashMap<>();
 
-
         this.firstVerse();
+        this.secondVerse();
 
-        this.images.put("65", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("70", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("122", new ImageNotification("Gif na dziś", R.drawable.dj2));
 
+    }
+
+    private void secondVerse() {
+        int minuteDelay = 59;
+
+        this.lyrics.put(minuteDelay + 16 + "", "Musisz się uczyć?");
+        this.lyrics.put( minuteDelay + 17 + "", "okej spoko");
+        this.lyrics.put(minuteDelay + 18 + "", "ważna sprawa");
+        this.lyrics.put(minuteDelay + 20 + "", "Tylko szkoda że się najebałaś xd");
+        this.lyrics.put(minuteDelay + 22 + "", "nastepnym razem");
+        this.lyrics.put(minuteDelay + 23 + "", "jakbyś nie chciała się spotkać");
+        this.lyrics.put(minuteDelay + 25 + "", "możesz powiedzieć nie wiem kurwa");
+        this.lyrics.put(minuteDelay + 26 + "", "nie chce się spotkać?");
+
+        this.lyrics.put(minuteDelay + 28 + "", "nie jestem pępkiem świata");
+        this.lyrics.put(minuteDelay + 30 + "", "trudno");
+        this.lyrics.put(minuteDelay + 31 + "", "ciągle mówisz że nim będę jutro");
+        this.lyrics.put(minuteDelay + 33 + "", "ale chuj w to");
+        this.lyrics.put(minuteDelay + 34 + "", "idziemy spotkać Twoje dziewczyny");
+        this.lyrics.put(minuteDelay + 35 + "", "bo jakaś Asia");
+        this.lyrics.put(minuteDelay + 36 + "", "akurat jutro");
+        this.lyrics.put(minuteDelay + 37 + "", "ma urodziny xd");
+
+        this.lyrics.put(minuteDelay + 39 + "", "Jeżdzę pół miasta po Twoje jebane pierogi");
+        this.lyrics.put(minuteDelay + 42 + "", "Jeszcze mi mówisz zostaw, mam nie ogolone nogi");
+        this.lyrics.put(minuteDelay + 45 + "", "I bez łaski, choć bym wziął Cię chętniej niż hajsik \uD83D\uDE05");
+        this.lyrics.put(minuteDelay + 47 + "", "I bez laski");
+        this.lyrics.put(minuteDelay + 48 + "", "jak zwykle kurwa cooo");
+
+        this.lyrics.put(minuteDelay + 49 + "", "chuj");
+        this.lyrics.put(minuteDelay + 50 + "", "daje z siebie robić frajera");
+        this.lyrics.put(minuteDelay + 52 + "", "tylko po to żebyś się uśmiechnęła");
+        this.lyrics.put(minuteDelay + 54 + "", "i pamiętaj bedę, nieważne co by się działo \uD83D\uDC96");
+        this.lyrics.put(minuteDelay + 57 + "", "tylko");
+        this.lyrics.put(minuteDelay + 58 + "", "czy pomalujesz dla mnie paznokcie na biało?");
+
+        this.lyrics.put(minuteDelay + 60 + "", "Bo mi się kurwa podobają \uD83D\uDE01 \uD83D\uDE01 \uD83D\uDE01");
     }
 
     private void firstVerse() {
@@ -64,8 +102,8 @@ public class Content {
         this.lyrics.put("41", "W moich googlach, klikam - apteka całodobowa \uD83D\uDD0E \uD83D\uDE91 \uD83D\uDC8A");
 
         this.lyrics.put("43", "Coś budzi we mnie to, że nie jesteś łatwa \uD83E\uDDD0");
-        this.lyrics.put("46", "Pewnie się spóźnię bo");
-        this.lyrics.put("47", "chciałem zdobyć \uD83C\uDF37 Cii \uD83D\uDC90");
+        this.lyrics.put("45", "Pewnie się spóźnię bo");
+        this.lyrics.put("46", "chciałem zdobyć \uD83C\uDF37 Cii \uD83D\uDC90");
         this.lyrics.put("48", "I wtedy mówisz że, yyy ta");
         this.lyrics.put("49", "ta koszula ładna \uD83D\uDC55");
         this.lyrics.put("51", "I wiemy w czym wyskoczę");

@@ -25,7 +25,7 @@ public class NotificationService extends IntentService {
     String channelName = "asd123";
     String channelId = "channel-id-tinder";
     Content content = new Content();
-    int delay = 0 * 1000;
+    int delay = 71 * 1000;
 
     private MediaPlayer audioPlayer = null;
 
@@ -67,7 +67,7 @@ public class NotificationService extends IntentService {
         this.audioPlayer.seekTo(delay);
         this.audioPlayer.start();
 
-        for (long nowSec = 0; nowSec < 70;) {
+        for (long nowSec = 0; nowSec < 122;) {
             long nowMili = delay + new Date().getTime() - startTime;
             nowSec = nowMili / 1000;
 
