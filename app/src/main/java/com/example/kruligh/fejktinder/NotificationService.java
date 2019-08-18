@@ -21,7 +21,8 @@ public class NotificationService extends IntentService {
     String channelId = "channel-id-tinder";
     Content content = new Content();
     int delay = 0 * 1000;
-    int endTime = 4 * 60;
+    int endTime = 10; //4 * 60;
+    int initSleep = 5 * 1000;
 
     private MediaPlayer audioPlayer = null;
 
@@ -58,7 +59,7 @@ public class NotificationService extends IntentService {
     @Override
     protected void onHandleIntent(Intent workIntent) {
         try {
-            Thread.sleep(5 * 1000);
+            Thread.sleep(initSleep);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -96,7 +97,7 @@ public class NotificationService extends IntentService {
             return;
         }
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.drawable.mes2, 0)
+                .setSmallIcon(R.drawable.ic_stat_msgszarypustywsrodku, 0)
 //                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(), R.drawable.mes2))
                 .setContentTitle("Dominik Krulig Bugz")
                 .setColorized(true)
