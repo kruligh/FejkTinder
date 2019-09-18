@@ -20,7 +20,7 @@ public class NotificationService extends IntentService {
     String channelName = "asd123";
     String channelId = "channel-id-tinder";
     Content content = new Content();
-    int delay = 0 * 1000;
+    int delay = 165 * 1000;
     int endTime = 4 * 60;
     int initSleep = 0 * 1000;
 
@@ -53,7 +53,7 @@ public class NotificationService extends IntentService {
     }
 
     private void initAudioPlayer() {
-        audioPlayer = MediaPlayer.create(this, R.raw.ballada_o_bialych_paznokciach_mixdown);
+        audioPlayer = MediaPlayer.create(this, R.raw.pilot_z_cutami);
     }
 
     @Override

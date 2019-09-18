@@ -34,7 +34,14 @@ public class Content {
         this.thirdVerse();
 
         this.images.put("70", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("73", new ImageNotification("Gif na dziś", R.drawable.dj2));
+
         this.images.put("122", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("125", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("128", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("131", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("134", new ImageNotification("Gif na dziś", R.drawable.dj2));
+        this.images.put("138", new ImageNotification("Gif na dziś", R.drawable.dj2));
 
     }
 
@@ -42,24 +49,25 @@ public class Content {
         int minuteDelay = 120;
         this.lyrics.put(minuteDelay + 22 + "", "hej");
         this.lyrics.put(minuteDelay + 23 + "", "w sumie przepraszam za wczoraj \uD83E\uDD37\u200D");
-        this.lyrics.put(minuteDelay + 25 + "", "zrobiłem Ci brony, kurwa z parasola ☂");
-        this.lyrics.put(minuteDelay + 26 + "", "z igły widły w sensie \uD83D\uDE05");
-        this.lyrics.put(minuteDelay + 28 + "", "byłem pijany");
-        this.lyrics.put(minuteDelay + 29 + "", "mogłem Ci nic pisać \uD83E\uDD26\u200D");
+        this.lyrics.put(minuteDelay + 24 + "", "zrobiłem Ci brony, kurwa z parasola ☂");
+        this.lyrics.put(minuteDelay + 25 + "", "z igły widły w sensie \uD83D\uDE05");
+        this.lyrics.put(minuteDelay + 27 + "", "byłem pijany");
+        this.lyrics.put(minuteDelay + 28 + "", "mogłem Ci nic pisać \uD83E\uDD26\u200D");
         this.lyrics.put(minuteDelay + 30 + "", "ale tak to czytam, w morde bita, prawda z życia \uD83D\uDE43");
 
-        this.lyrics.put(minuteDelay + 34 + "", "bo chciałem najebać hindusa \uD83E\uDD4A \uD83E\uDD4B");
+        this.lyrics.put(minuteDelay + 33 + "", "bo chciałem najebać hindusa \uD83E\uDD4A \uD83E\uDD4B");
         this.lyrics.put(minuteDelay + 36 + "", "bo chciał łapać Cię za tyłek?");
-        this.lyrics.put(minuteDelay + 38 + "", "no jakoś mnie to rusza \uD83E\uDD10");
+        this.lyrics.put(minuteDelay + 37 + "", "no jakoś mnie to rusza \uD83E\uDD10");
         this.lyrics.put(minuteDelay + 39 + "", "i jak niby mam mieć wyjebane \uD83E\uDD2C");
         this.lyrics.put(minuteDelay + 41 + "", "na to że potem siedzisz z pyskiem ciągle w instagramie \uD83D\uDCF1 \uD83E\uDD33");
 
-        this.lyrics.put(minuteDelay + 44 + "", "ile dałbym byś zapomniała problem");
+        this.lyrics.put(minuteDelay + 45 + "", "ile dałbym byś zapomniała problem");
         this.lyrics.put(minuteDelay + 47 + "", "który zrobiłem że pisałaś z tamtym gościem \uD83D\uDD75️\u200D");
+        this.lyrics.put(minuteDelay + 49 + "", "ale");
         this.lyrics.put(minuteDelay + 50 + "", "nawet z tym pajacem na bank się zgodzimy \uD83E\uDD1C \uD83E\uDD1B");
         this.lyrics.put(minuteDelay + 52 + "", "coś jest nie tak jak typ odwiedza Cię w Twoje w urodziny \uD83C\uDF82 \uD83C\uDF7E");
 
-        this.lyrics.put(minuteDelay + 56 + "", "szkoda że na zgode nie chcesz dać mi \uD83D\uDC8B");
+        this.lyrics.put(minuteDelay + 55 + "", "szkoda że na zgode nie chcesz dać mi \uD83D\uDC8B");
         this.lyrics.put(minuteDelay + 59 + "", "trudno kurwa");
         this.lyrics.put(minuteDelay + 60 + "", "będę duży \uD83D\uDC66");
         this.lyrics.put(minuteDelay + 61 + "", "miałem być, nieważne co by się działo");
@@ -67,22 +75,24 @@ public class Content {
 
         this.lyrics.put(minuteDelay + 65 + "", "a mi się serio podobają \uD83D\uDE0D");
 
+        this.lyrics.put(minuteDelay + 69 + "", "a mi się serio podobają...");
+
     }
 
     private void secondVerse() {
         int minuteDelay = 59;
 
-        this.lyrics.put(minuteDelay + 16 + "", "Musisz się uczyć?");
-        this.lyrics.put( minuteDelay + 17 + "", "okej spoko");
-        this.lyrics.put(minuteDelay + 18 + "", "ważna sprawa");
-        this.lyrics.put(minuteDelay + 20 + "", "Tylko szkoda że się najebałaś xd");
-        this.lyrics.put(minuteDelay + 22 + "", "nastepnym razem");
-        this.lyrics.put(minuteDelay + 23 + "", "jakbyś nie chciała się spotkać");
+        this.lyrics.put(minuteDelay + 17 + "", "Musisz się uczyć?");
+        this.lyrics.put( minuteDelay + 18 + "", "okej spoko");
+        this.lyrics.put(minuteDelay + 19 + "", "ważna sprawa");
+        this.lyrics.put(minuteDelay + 21 + "", "Tylko szkoda że się najebałaś xd");
+        this.lyrics.put(minuteDelay + 23 + "", "nastepnym razem");
+        this.lyrics.put(minuteDelay + 24 + "", "jakbyś nie chciała się spotkać");
         this.lyrics.put(minuteDelay + 25 + "", "możesz powiedzieć nie wiem kurwa");
-        this.lyrics.put(minuteDelay + 26 + "", "nie chce się spotkać?");
+        this.lyrics.put(minuteDelay + 27 + "", "nie chce się spotkać?");
 
         this.lyrics.put(minuteDelay + 28 + "", "nie jestem pępkiem świata");
-        this.lyrics.put(minuteDelay + 30 + "", "trudno");
+        this.lyrics.put(minuteDelay + 29 + "", "trudno");
         this.lyrics.put(minuteDelay + 31 + "", "ciągle mówisz że nim będę jutro");
         this.lyrics.put(minuteDelay + 33 + "", "ale chuj w to");
         this.lyrics.put(minuteDelay + 34 + "", "idziemy spotkać Twoje dziewczyny");
@@ -92,7 +102,7 @@ public class Content {
 
         this.lyrics.put(minuteDelay + 39 + "", "Jeżdzę pół miasta po Twoje jebane pierogi");
         this.lyrics.put(minuteDelay + 41 + "", "Jeszcze mi mówisz zostaw, mam nie ogolone nogi");
-        this.lyrics.put(minuteDelay + 44 + "", "I bez łaski, choć bym wziął Cię chętniej niż hajsik \uD83D\uDE05");
+        this.lyrics.put(minuteDelay + 44 + "", "I bez łaski, choć bym wziął Cię chętniej niż hajsik XD");
         this.lyrics.put(minuteDelay + 47 + "", "I bez laski");
         this.lyrics.put(minuteDelay + 48 + "", "jak zwykle kurwa cooo");
 
@@ -141,8 +151,8 @@ public class Content {
         this.lyrics.put("51", "I wiemy w czym wyskoczę");
         this.lyrics.put("52", "żeby w weekend Cie gdzieś zabrać. \uD83D\uDE97 \uD83C\uDF07 \uD83C\uDFD6");
 
-        this.lyrics.put("55", "Pajacuje jak pajac za jeden Twój \uD83D\uDE42 \uD83E\uDD38\u200D");
-        this.lyrics.put("57", "Jak go nie widzę ranooo \uD83D\uDECC");
+        this.lyrics.put("54", "Pajacuje jak pajac za jeden Twój \uD83D\uDE42 \uD83E\uDD38\u200D");
+        this.lyrics.put("56", "Jak go nie widzę ranooo \uD83D\uDECC");
         this.lyrics.put("58", "ja jebie \uD83E\uDD26\u200D");
         this.lyrics.put("59", "prawie umre \uD83D\uDC80");
         this.lyrics.put("60", "Bedę");
@@ -150,6 +160,9 @@ public class Content {
         this.lyrics.put("62", "❓Możesz malować dla mnie paznokcie na biało❓");
 
         this.lyrics.put("64", "Bo mi się podobają");
+
+        this.lyrics.put("66", "\uD83D\uDE18");
+        this.lyrics.put("68", "🥰");
     }
 
 
